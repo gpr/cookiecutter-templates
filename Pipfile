@@ -1,0 +1,11 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+gitpython = "*"
+cookiecutter = "*"
+bump2version = "*"
+pre-commit = "*"
+pygithub = {extras = ["integrations"], version = "*"}
