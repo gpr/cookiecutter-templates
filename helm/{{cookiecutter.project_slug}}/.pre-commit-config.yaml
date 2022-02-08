@@ -1,0 +1,21 @@
+default_language_version:
+  python: python3
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: check-yaml
+        files: ^.pre-commit-config.yaml$
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        exclude: ^.bumpversion.cfg$
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 2.1.5
+    hooks:
+      - id: markdownlint # Configure in .mdlrc
+        files: ^[^\.].*\.md$
+      - id: shellcheck
+  - repo: https://gitlab.com/gpr-oss/k8s-pre-commit-hooks
+    rev: v0.1.0
+    hooks:
+      - id: helm-kubeval

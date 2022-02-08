@@ -1,0 +1,8 @@
+---
+# kustomization.yaml
+#
+# Usage: kustomize build
+#
+
+resources:
+  - all.yaml

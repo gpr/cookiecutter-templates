@@ -1,0 +1,23 @@
+apiVersion: v2
+name: {{ cookiecutter.project_slug }}
+description: "{{ cookiecutter.project_description }}"
+type: application
+version: 0.1.0-dev.1
+appVersion: "{{ cookiecutter.chart_app_version }}"
+keywords:
+{%- set keywords = cookiecutter.chart_keywords.split(',') %}
+{%- for keyword in keywords %}
+  - {{ keyword | trim() }}
+{%- endfor %}
+home: {{ cookiecutter.project_homepage }}
+sources:
+  - https://github.com/{{ cookiecutter.github_namespace }}/{{ cookiecutter.project_slug }}.git
+maintainers:
+  - name: {{ cookiecutter.author_name }}
+# dependencies:
+#   - name: <chart-name>
+#     version: <chart-version>
+#     repository: https://<chart.repository>
+#     condition: global.<chart-name>.enabled
+#     tags:
+#       - database

@@ -1,0 +1,20 @@
+{
+  "project_name": "",
+  "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+  "project_description": "TODO: Write a description",
+  "create_github_project": "y",
+  "github_namespace": "",
+  "github_private": "y",
+  "git_push": "y",
+  "project_homepage": "https://github.io/{{ cookiecutter.github_namespace }}/{{ cookiecutter.project_slug }}",
+  "author_name": "",
+  "author_email": "",
+  "chart_keywords": "",
+  "chart_app_version": "",
+  "_extensions": [
+    "jinja2_time.TimeExtension"
+  ],
+  "_copy_without_render": [
+    ".chglog/*.tpl.md"
+  ]
+}
