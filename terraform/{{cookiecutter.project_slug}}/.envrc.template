@@ -1,0 +1,11 @@
+export AWS_ACCESS_KEY_ID=""
+export AWS_SECRET_ACCESS_KEY=""
+#
+export OVH_CLOUD_PROJECT_SERVICE=""
+export OVH_APPLICATION_KEY=""
+export OVH_APPLICATION_SECRET=""
+export OVH_CONSUMER_KEY=""
+#
+export TF_VAR_keypair_name=cibot
+export TF_VAR_ssh_pub_key=~/.ssh/rsa_id.pub
+export TF_VAR_ssh_prv_key=~/.ssh/rsa_id
