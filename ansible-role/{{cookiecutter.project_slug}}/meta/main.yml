@@ -1,10 +1,7 @@
 galaxy_info:
   author: {{ cookiecutter.author_name }}
   description: {{ cookiecutter.project_description }}
-{%- if cookiecutter.author_company != '' %}
-  company: {{ cookiecutter.author_company }}
-{%- endif %}
-  license: {{ cookiecutter.project_license }}
+  license: MIT
   min_ansible_version: 2.4
 
   #
