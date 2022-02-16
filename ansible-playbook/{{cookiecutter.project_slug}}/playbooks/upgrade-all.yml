@@ -1,0 +1,12 @@
+---
+# file: playbooks/upgrade-all.yml
+#
+# usage: ansible-playbook playbooks/upgrade-all.yml [--limit=<host|group>]
+#
+- hosts: all
+  tasks:
+    - name: upgrade all packages to the latest version
+      apt:
+        upgrade: dist
+        update_cache: true
+      become: true

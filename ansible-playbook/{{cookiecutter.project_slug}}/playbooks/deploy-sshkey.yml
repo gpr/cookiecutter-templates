@@ -1,0 +1,22 @@
+---
+# file: playbooks/deploy-sshkey.yml
+#
+# usage: ansible-playbook deploy-sshkey.yml [--extra-vars '{"ssh_key_name": "key_name"}'] [--limit=<host|group>]
+#
+# Options (see ansible-playbook for other options):
+#   --limit=<host|group>: limit the tasks execution to a group or a single host
+#   --extra-vars '{"ssh_key_name": "<key_name>"}': use an alternative SSH key name ($HOME/.ssh/<key_name>.pub)
+#
+# WARNING: you must add the host to the list of known to be able to use SSH password authentication.
+# ssh-keyscan <host> 2>/dev/null >>  ~/.ssh/known_hosts
+#
+- hosts: all
+  vars:
+    ansible_ssh_pass: "{{ ansible_become_pass }}"
+    ssh_key_name: id_rsa
+  tasks:
+    - name: set authorized key for user ansible copying it from current user
+      authorized_key:
+        user: "{{ ansible_user }}"
+        state: present
+        key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/' + ssh_key_name  + '.pub') }}"

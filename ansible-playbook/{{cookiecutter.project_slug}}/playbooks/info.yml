@@ -1,0 +1,14 @@
+---
+# file: playbooks/info.yml
+#
+# usage: ansible-playbook playbooks/info.yml [--limit=<host|group>]
+#
+- hosts: all
+  tasks:
+    - name: group distro
+      group_by: key=os_{{ ansible_distribution }}
+    - name: display all variables/facts known for a host
+      debug:
+        var: hostvars[inventory_hostname]
+        verbosity: 0
+      tags: info

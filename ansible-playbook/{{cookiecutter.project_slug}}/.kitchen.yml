@@ -1,0 +1,50 @@
+---
+driver:
+  name: "vagrant"
+
+platforms:
+  - name: "ubuntu_focal64"
+    driver:
+      box: "ubuntu/focal64"
+      box_check_update: false
+      linked_clone: true
+      customize:
+        memory: 512
+        storagectl:
+          - name: "SATA Controller"
+            hostiocache: "on"
+      provision: true
+      vagrantfiles:
+        - test/vagrant.rb
+
+  - name: "debian_buster64"
+    driver:
+      box: "debian/buster64"
+      box_check_update: false
+      linked_clone: true
+      customize:
+        memory: 512
+        storagectl:
+          - name: "SATA Controller"
+            hostiocache: "on"
+      provision: true
+      vagrantfiles:
+        - "test/vagrant.rb"
+
+provisioner:
+    name: "ansible_push"
+    ansible_config: "test/ansible.cfg"
+#    vault_password_file: ".vault"
+    remote_user: "vagrant"
+    host_key_checking: false
+    chef_bootstrap_url: false
+    use_instance_name: true
+    idempotency_test: true
+    fail_non_idempotent: true
+    diff: true
+    verbose: "v"
+
+suites:
+  - name: "main"
+    provisioner:
+        playbook: "test/main.yml"

@@ -1,0 +1,13 @@
+---
+# file: playbooks/test-become.yml
+#
+# usage: ansible-playbook playbooks/test-become.yml [--limit=<host|group>]
+#
+- hosts: all
+  tasks:
+    - name: display all variables/facts known for a host
+      command: "touch /root/.{{ ansible_user }}_become"
+      args:
+        creates:
+          - "/root/.{{ ansible_user }}_become"
+      become: true
