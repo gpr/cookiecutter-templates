@@ -23,5 +23,3 @@
 .vscode/
 # direnv config
 .envrc
-# Chart dependencies
-charts/*.tgz
