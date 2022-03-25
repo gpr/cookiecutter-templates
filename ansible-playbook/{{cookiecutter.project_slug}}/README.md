@@ -7,13 +7,13 @@
 To install this role in `$HOME/.ansible/roles`:
 
 ```console
-ansible-galaxy install git+ssh://git@github.io/{{ cookiecutter.github_namespace }}/{{ cookiecutter.project_slug }}.git,master
+ansible-galaxy install git+ssh://git@github.com/{{ cookiecutter.github_namespace }}/{{ cookiecutter.project_slug }}.git,master
 ```
 
 You can also add this role in a `requirements.yml` file:
 
 ```YAML
-- src: git@github.io/{{ cookiecutter.github_namespace }}/{{ cookiecutter.project_slug }}.git
+- src: git@github.com/{{ cookiecutter.github_namespace }}/{{ cookiecutter.project_slug }}.git
   scm: git
   version: master
 ```

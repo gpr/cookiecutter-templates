@@ -6,7 +6,7 @@
   "github_namespace": "",
   "github_private": "y",
   "git_push": "y",
-  "project_homepage": "https://github.io/{{ cookiecutter.github_namespace }}/{{ cookiecutter.project_slug }}",
+  "project_homepage": "https://github.com/{{ cookiecutter.github_namespace }}/{{ cookiecutter.project_slug }}",
   "author_name": "",
   "author_email": "",
   "chart_keywords": "",

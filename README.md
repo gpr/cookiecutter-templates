@@ -30,7 +30,7 @@ pipenv install
 Example of usage (prefix the command with `pipenv run` if you use _pipenv_):
 
 ```shell
-cookiecutter https://github.io/gpr/cookiecutter-templates.git --directory helm
+cookiecutter https://github.com/gpr/cookiecutter-templates.git --directory helm
 ```
 
 Common options can bet set in `$HOME/.cookiecutterrc` config file:
