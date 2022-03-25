@@ -13,6 +13,7 @@
     "jinja2_time.TimeExtension"
   ],
   "_copy_without_render": [
-    ".chglog/*.tpl.md"
+    ".chglog/*.tpl.md",
+    ".terraform-docs.yml"
   ]
 }
