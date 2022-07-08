@@ -9,12 +9,11 @@
   "project_homepage": "https://github.com/{{ cookiecutter.github_namespace }}/{{ cookiecutter.project_slug }}",
   "author_name": "",
   "author_email": "",
-  "chart_keywords": "",
-  "chart_app_version": "",
   "_extensions": [
     "jinja2_time.TimeExtension"
   ],
   "_copy_without_render": [
+    "playbooks/*.yaml",
     ".chglog/*.tpl.md"
   ]
 }
