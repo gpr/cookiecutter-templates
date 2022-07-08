@@ -1,0 +1,12 @@
+# file: site.yaml
+#
+# usage: ansible-playbook site.yaml
+#
+
+- hosts: all
+  tasks:
+    - name: display inventory_hostname
+      debug:
+        var: inventory_hostname
+        verbosity: 0
+      tags: info
