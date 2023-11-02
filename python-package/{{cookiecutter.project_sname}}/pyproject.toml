@@ -1,0 +1,62 @@
+[build-system]
+requires = ["poetry>=1.0"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "{{cookiecutter.project_slug}}"
+version = "1.0.0-dev.1"
+description = "{{cookiecutter.project_description}}"
+authors = ["{{cookiecutter.author_name}} <{{cookiecutter.author_email}}>"]
+license = "BSD-3-Clause"
+readme = "README.md"
+homepage = "{{cookiecutter.project_homepage}}"
+repository = "{{cookiecutter.project_homepage}}"
+documentation = "{{cookiecutter.project_homepage}}"
+keywords = [
+    "{{cookiecutter.project_slug}}",
+]
+classifiers = [
+    "Environment :: Console",
+    "License :: OSI Approved :: BSD License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+]
+packages = [
+    { include = "{{cookiecutter.project_slug}}", from = "src" },
+]
+
+[tool.poetry.scripts]
+{{cookiecutter.project_slug}}-cli = '{{cookiecutter.project_slug}}.cli.cli:main_cli'
+
+[tool.poetry.dependencies]
+python = ">=3.8,<=3.12"
+python-dotenv = ">=1.0.0"
+click = ">=8.1.7"
+
+[tool.poetry.dev-dependencies]
+black = ">=19.10b"
+tox = ">=3.14.6"
+pre-commit = ">=2.1.1"
+flake8 = ">=3.7.9"
+flake8-builtins = ">=1.5.3"
+pep8-naming = ">=0.11.1"
+flake8-fixme = ">=1.1.1"
+flake8-bugbear = ">=20.1.4"
+pylint = ">=2.5.3"
+bandit = ">=1.6.2"
+pytest = ">=6.0.1"
+coverage = ">=5.2.1"
+flake8-import-order = ">=0.18.1"
+bump2version = ">=1.0.0"
+pytest-cov = ">=2.10.0"
+
+[tool.pylint.MASTER]
+ignore-patterns = "env.py"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-vv --cov={{cookiecutter.project_slug}} --cov-report=term-missing --cov-report html"
+testpaths = [
+    "tests",
+]

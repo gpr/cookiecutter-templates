@@ -1,0 +1,14 @@
+{
+  "project_name": "",
+  "project_sname": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+  "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '_') }}",
+  "project_description": "TODO: Write a description",
+  "github_namespace": "",
+  "create_github_project": "n",
+  "github_private": "n",
+  "git_push": "n",
+  "project_homepage": "https://github.com/{{ cookiecutter.github_namespace }}/{{ cookiecutter.project_sname }}",
+  "author_name": "",
+  "author_email": "",
+  "_copy_without_render": ["playbooks/*.yaml", ".chglog/*.tpl.md"]
+}

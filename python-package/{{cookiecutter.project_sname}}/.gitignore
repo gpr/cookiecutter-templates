@@ -1,0 +1,13 @@
+/.idea/
+/.venv*/
+/**/results.xml
+/**/__pycache__/
+/dist/
+/**/*.pyc
+/.env
+/.envrc
+/**/*.egg-info/
+/.coverage
+/htmlcov/
+/.tox/
+/results.xml
